@@ -1,0 +1,104 @@
+/* FINAL_PROJECT/style.css */
+
+/* style.css - Final Version */
+
+:root {
+    --body-background-fill: #f9fafb !important;
+    --background-fill-primary: #ffffff !important;
+    --background-fill-secondary: #f3f4f6 !important;
+    --border-color-accent: #e5e7eb !important;
+    --text-color-primary: #111827 !important;
+    --text-color-secondary: #6b7280 !important;
+    --text-color-accent: #111827 !important;
+    --shadow-drop: rgba(0,0,0,0.05) 0px 1px 2px 0px !important;
+    --shadow-drop-lg: 0 8px 24px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+/* --- Google Fonts에서 웹 폰트 가져오기 --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+/* --- 전체 폰트 설정 --- */
+div.gradio-container {
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+/* --- Gradio 앱 전체 컨테이너 스타일 --- */
+div.gradio-container {
+    max-width: 960px !important;
+    margin: 2rem auto !important;
+    border-radius: 16px !important;
+    border: none !important;
+}
+
+/* --- 채팅 메시지 버블 커스터마이징 --- */
+.message.user .bubble-container {
+    background: rgba(22, 163, 74, 0.1) !important;
+    color: #15803d !important;
+}
+.message.bot .bubble-container {
+    background: #f1f3f5 !important;
+    color: #343a40 !important;
+}
+.user .avatar-container + .bubble-container, .user .bubble-container + .avatar-container {
+    border-top-right-radius: 0 !important;
+}
+.bot .avatar-container + .bubble-container, .bot .bubble-container + .avatar-container {
+    border-top-left-radius: 0 !important;
+}
+
+/* style.css (맨 아래에 이 코드를 추가하세요) */
+
+/* --- 채팅 입력창 & 버튼이 있는 하단 영역 전체 스타일 --- */
+.gradio-container .form {
+    padding: 1rem !important; /* 입력창 영역 전체에 안쪽 여백을 줍니다. */
+    border-top: 1px solid var(--border-color-accent) !important; /* 채팅 기록과 구분되는 상단 선을 추가합니다. */
+    background: var(--background-fill-primary) !important; /* 배경색을 흰색으로 지정하여 구분감을 줍니다. */
+    margin: 0 !important;
+}
+
+/* --- 텍스트 입력창 스타일 --- */
+textarea {
+    background-color: var(--background-fill-secondary) !important; /* 입력창 배경을 연한 회색으로 변경 */
+    border: 1px solid var(--border-color-accent) !important; /* 테두리 색상 변경 */
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* 사용자가 입력창을 클릭했을 때 (포커스 상태) 스타일 */
+textarea:focus {
+    border-color: #16a34a !important;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2) !important;
+    background-color: var(--background-fill-primary) !important; /* 클릭 시 흰색으로 변경 */
+}
+/* 사용자가 입력창을 클릭했을 때 (포커스 상태) 스타일 */
+textarea:focus {
+    /* 테두리 색상을 'Fresh Mint' 테마의 포인트 색상인 녹색으로 변경 */
+    border-color: #16a34a !important;
+    /* 바깥쪽에 은은한 녹색 그림자(glow) 효과를 추가하여 활성화 상태를 명확히 함 */
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2) !important;
+}
+
+/* ===== 오른쪽 도구 패널 고정/가독성 향상 ===== */
+#two_col { gap: 16px !important; }
+
+#hil_panel {
+  position: sticky;
+  top: 80px;                 /* 헤더 아래에 고정되는 느낌 */
+  align-self: flex-start;    /* 칼럼 상단 정렬 */
+  background: var(--background-fill-primary) !important;
+  border: 1px solid var(--border-color-accent) !important;
+  border-radius: 12px !important;
+  padding: 14px !important;
+  box-shadow: var(--shadow-drop-lg) !important;
+}
+
+/* 패널 내부 컨트롤 가독성 */
+#hil_panel .gr-button,
+#hil_panel textarea,
+#hil_panel input[type="text"] {
+  width: 100% !important;
+}
+
+#hil_panel .gr-button { margin-top: 6px !important; }
